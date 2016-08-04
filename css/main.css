@@ -1,0 +1,138 @@
+/* Custom Tabs */
+.info-tabs {
+	max-width: 1000px;
+	margin: 0 auto;
+}
+
+.tabs__content{
+	height: 0;
+	opacity: 0;
+	overflow: hidden;
+	transition: .25s ease all;
+}
+
+.tabs__content.active{
+	padding: 30px 0;
+	height: auto;
+	opacity: 1;
+}
+
+.tabs__caption {
+	padding: 0;
+	display: table;
+	table-layout: fixed;
+	width: 100%;
+}
+
+.tabs__caption > li{
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	border: 2px solid #fff;
+	cursor: pointer;
+	background-color: #f0eee9;
+	height: 50px;
+	width: 100%;
+	transition: .25s ease all;
+}
+
+.tabs__caption > li span {
+	display: inline-block;
+}
+
+.tabs__caption > li.active,
+.tabs__caption > li:hover {
+	background-color: orange;
+}
+
+.tabs-top-panel {
+	position: relative;
+}
+
+.tab-prev,
+.tab-next {
+	display: inline-block;
+	text-align: center;
+	width: 50px;
+	height: 50px;
+	cursor: pointer;
+	background-color: #f0eee9;
+	transition: .25s ease all;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+
+.tab-prev:hover,
+.tab-next:hover {
+	background-color: orange;
+}
+
+.tab-prev.disabled,
+.tab-next.disabled {
+	opacity: .3;
+	background-color: #dededc;
+	cursor: default;
+}
+
+.tab-prev.disabled:hover,
+.tab-next.disabled:hover {
+	background-color: #dededc
+}
+
+
+
+
+@media only screen and (max-width : 600px) {
+
+	.tabs-top-panel{
+		height: 50px;
+	}
+
+	.tab-prev,
+	.tab-next {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 70px;
+	}
+
+	.tab-next {
+		left: auto;
+		right: 0;
+	}
+
+	.tabs__caption {
+		display: block;
+	}
+
+	.tabs__caption > li {
+		position: absolute;
+		z-index: -1;
+		width: calc(100% - 150px);
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		align-items: center;
+		left: 50%;
+		top: 0;
+		height: 50px;
+		transform: translate(-50%,0);
+		border: none;
+	}
+
+	.tabs__caption > li span {
+		display: block;
+		width: 100%;
+	}
+
+	.tabs__caption > li.active {
+		z-index: 1;
+	}
+	
+}
+/* Custom Tabs END */
